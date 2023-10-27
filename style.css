@@ -1,0 +1,46 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    color: white;
+    background-color: #333;
+}
+
+#canvas {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 3px solid black;
+    background: url("assets/background.png");
+}
+
+.hidden {
+    display: none;
+}
+
+#restartGame {
+    display: none;
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    width: 200px;
+    height: 60px;
+    font-size: 30px;
+    line-height: 30px;
+    font-family: 'Pixelify Sans', sans-serif;
+    color: white;
+    transform: translate(-50%, -50%);
+    border: 3px solid white;
+    background-color: rgba(201, 115, 231, 0.87);
+}
+
+#restartGame:hover {
+    background-color: rgba(178, 66, 215, 0.87);
+}
