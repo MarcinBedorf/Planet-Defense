@@ -128,6 +128,17 @@ export default class Game {
             context.fillText(message1, this.width * 0.5, 150);
             context.font = '50px "Pixelify Sans", sans-serif';
             context.fillText(message2, this.width * 0.5, 225);
+
+            const restartGameBtn = document.getElementById('restartGame');
+            restartGameBtn.addEventListener('click', () => {
+                this.restartGame();
+                restartGameBtn.style.display = 'none';
+            })
+            if (this.gameOver) {
+                restartGameBtn.style.display = 'block';
+            } else {
+                restartGameBtn.style.display = 'none';
+            }
         }
         context.restore();
     }
@@ -180,5 +191,24 @@ export default class Game {
                 return this.enemyPool[i];
             }
         }
+    }
+
+    restartGame() {
+        this.score = 0;
+        this.playerLives = 5;
+        this.gameOver = false;
+        this.enemyTimer = 0;
+
+        this.projectilePool = [];
+        this.numberOfProjectiles = 10;
+        this.createProjectilePool();
+
+        this.enemyPool = [];
+        this.numberOfEnemies = 20;
+        this.createEnemyPool();
+        this.enemyPool[0].start();
+        this.enemyTimer = 0;
+        this.enemyInterval = 800;
+
     }
 }
