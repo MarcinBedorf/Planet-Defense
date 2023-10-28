@@ -9,10 +9,37 @@
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
 
 </head>
 <body>
+<div class="hint-container">
+    <div class="hint-row">
+        <h2>Before you start</h2>
+    </div>
+    <div class="hint-row">
+        <p>To take a shot, press</p>
+        <img class="icon" src="./assets/mouse-icon.svg" alt="mouse icon">
+        <p>or</p>
+        <img class="icon" src="./assets/keyboard-icon.svg" alt="keyboard icon">
+    </div>
+    <div class="hint-row">
+        <p>There are several types of enemies and they differ in the number of shots they can receive.<br>For example, an asteroid is destroyed after one shot, while a Lobstermorph after 8 shots.</p>
+    </div>
+    <div class="hint-row">
+        <p>The player's life is displayed as</p>
+        <img class="icon" src="./assets/heart.svg" alt="mouse icon">
+        <p>and limited to 5.</p>
+    </div>
+    <div class="hint-row">
+       <p>The player loses one life when an enemy hits his ship or home planet.</p>
+    </div>
+    <div class="hint-row">
+        <p>The game ends when the player's score reaches&nbsp;100 or he loses all his lives. Have fun!</p>
+    </div>
+
+    <button class="start__game">start</button>
+</div>
 <canvas id="canvas"></canvas>
 <button id="restartGame">Restart</button>
 <div class="hidden">

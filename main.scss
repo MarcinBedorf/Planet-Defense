@@ -1,0 +1,109 @@
+$primary-color: #fff;
+$secondary-color: #E600A5;
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Orbitron', sans-serif;
+  color: $primary-color;
+  background-color: #333;
+}
+
+.hint-container {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 805px;
+  height: 805px;
+  background: rgb(39,22,70);
+  background: linear-gradient(180deg, rgba(39,22,70,1) 0%, rgba(76,10,65,1) 100%);
+  border: 2px solid black;
+  z-index: 100;
+  padding: 36px;
+
+  &.hidden {
+    display: none;
+  }
+
+  h2 {
+    font-size: 40px;
+    margin: 0 auto 10px;
+    text-align: center;
+  }
+
+  .hint-row {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    margin-bottom: 40px;
+
+    p {
+      font-size: 24px;
+      line-height: 35px;
+      letter-spacing: 1px;
+    }
+
+    .icon {
+      margin: 0 12px;
+      height: 40px;
+    }
+  }
+
+  .start__game {
+    margin: 0 auto;
+    width: 300px;
+    height: 80px;
+    color: $primary-color;
+    font-size: 30px;
+    font-family: "Orbitron", sans-serif;
+    text-transform: uppercase;
+    background-color: $secondary-color;
+
+    &:hover {
+      background-color: #A70070;
+    }
+  }
+}
+
+#canvas {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 3px solid black;
+  background: url("assets/background.png");
+}
+
+.hidden {
+  display: none;
+}
+
+#restartGame {
+  display: none;
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  width: 200px;
+  height: 60px;
+  font-size: 30px;
+  line-height: 30px;
+  font-family: 'Orbitron', sans-serif;
+  color: $primary-color;
+  transform: translate(-50%, -50%);
+  border: 3px solid $primary-color;
+  background-color: rgba(201, 115, 231, 0.87);
+}
+
+#restartGame:hover {
+  background-color: rgba(178, 66, 215, 0.87);
+}
