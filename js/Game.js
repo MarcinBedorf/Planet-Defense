@@ -106,7 +106,7 @@ export default class Game {
     drawStatusText(context) {
         context.save();
         context.textAlign = 'left';
-        context.font = '30px "Pixelify Sans", sans-serif';
+        context.font = '30px "Orbitron", sans-serif';
         context.fillText(`SCORE: ${this.score}`, 20, 30);
         const heart = document.getElementById('heart');
         for (let i = 0; i < this.playerLives; i++) {
@@ -124,9 +124,9 @@ export default class Game {
                 message1 = 'You lose!';
                 message2 = 'Try again';
             }
-            context.font = '80px "Pixelify Sans", sans-serif';
+            context.font = '80px "Orbitron", sans-serif';
             context.fillText(message1, this.width * 0.5, 150);
-            context.font = '50px "Pixelify Sans", sans-serif';
+            context.font = '50px "Orbitron", sans-serif';
             context.fillText(message2, this.width * 0.5, 225);
 
             const restartGameBtn = document.getElementById('restartGame');

@@ -1,5 +1,9 @@
 {
+  "scripts": {
+    "compile": "sass --watch --no-source-map main.scss style.css"
+  },
   "dependencies": {
-    "live-server": "^1.2.2"
+    "live-server": "^1.2.2",
+    "sass": "^1.69.5"
   }
 }

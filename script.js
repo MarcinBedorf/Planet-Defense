@@ -8,22 +8,30 @@ window.addEventListener('load', () => {
     ctx.strokeStyle = 'white';
     ctx.fillStyle = 'white';
     ctx.lineWidth = 2;
-    ctx.font = '40px "Pixelify Sans", sans-serif';
+    ctx.font = '40px "Orbitron", sans-serif';
     ctx.textAlign = 'center';
     ctx.textBaseline = 'middle';
 
+    let gameStarted = false;
 
-    const game = new Game(canvas);
+    const hints = document.querySelector('.hint-container');
+    const startBtn = document.querySelector('.start__game');
+    startBtn.addEventListener('click', () => {
+        hints.classList.add('hidden');
+        gameStarted = true;
 
-    let lastTime = 0;
+        if (gameStarted) {
+            const game = new Game(canvas);
+            let lastTime = 0;
 
-    function animate(timeStamp) {
-        const deltaTime = timeStamp - lastTime;
-        lastTime = timeStamp;
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-        game.render(ctx, deltaTime);
-        requestAnimationFrame(animate);
-    }
-
-    requestAnimationFrame(animate);
+            function animate(timeStamp) {
+                const deltaTime = timeStamp - lastTime;
+                lastTime = timeStamp;
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                game.render(ctx, deltaTime);
+                requestAnimationFrame(animate);
+            }
+            requestAnimationFrame(animate);
+        }
+    });
 })
