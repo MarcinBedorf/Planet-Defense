@@ -3,6 +3,8 @@ import Player from "./Player.js";
 import Projectile from "./Projectile.js";
 import Asteroid from "./Asteroid.js";
 import Lobstermorph from "./Lobstermorph.js";
+import Beetlemorph from "./Beetlemorph.js";
+import Rhinomorph from "./Rhinomorph.js";
 
 export default class Game {
     constructor(canvas) {
@@ -177,8 +179,12 @@ export default class Game {
     createEnemyPool() {
         for (let i = 0; i < this.numberOfEnemies; i++) {
             let randomNumber = Math.random();
-            if (randomNumber > 0.25) {
+            if (randomNumber < 0.25) {
                 this.enemyPool.push(new Asteroid(this));
+            } else if (randomNumber < 0.45) {
+                this.enemyPool.push(new Beetlemorph(this));
+            } else if (randomNumber < 0.65) {
+                this.enemyPool.push(new Rhinomorph(this));
             } else {
                 this.enemyPool.push(new Lobstermorph(this));
             }
